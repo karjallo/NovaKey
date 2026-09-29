@@ -23,6 +23,7 @@ apply plugin: 'com.android.library'
 android {
     namespace 'viviano.cantu.novakey.core'
     compileSdk 37
+    compileSdkMinor 0
     buildToolsVersion "36.0.0"
 
     defaultConfig {
@@ -31,6 +32,8 @@ android {
         versionCode 24
         versionName "0.3.9"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "int", "VERSION_CODE", "1"
+        buildConfigField "String", "VERSION_NAME", "\"1.0\""
     }
 
     buildTypes {

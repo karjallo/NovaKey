@@ -23,6 +23,7 @@ apply plugin: 'com.android.application'
 android {
     namespace 'viviano.cantu.novakey'
     compileSdk 37
+    compileSdkMinor 0
     buildToolsVersion "36.0.0"
 
     defaultConfig {
