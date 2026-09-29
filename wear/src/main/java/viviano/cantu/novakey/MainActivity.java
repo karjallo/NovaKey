@@ -21,7 +21,7 @@
 package viviano.cantu.novakey;
 
 import android.os.Bundle;
-import android.support.wearable.activity.WearableActivity;
+import androidx.wear.activity.WearableActivity;
 import android.widget.TextView;
 
 public class MainActivity extends WearableActivity {

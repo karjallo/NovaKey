@@ -23,6 +23,7 @@ package viviano.cantu.novakey;
 import android.content.ClipboardManager;
 import android.content.SharedPreferences.Editor;
 import android.graphics.PixelFormat;
+import android.os.Build;
 import android.os.Vibrator;
 import android.text.InputType;
 import android.view.Gravity;
@@ -439,6 +440,13 @@ public class MainNovaKeyService extends NovaKeyService {
 
     // ---------------- Start of floating view code ----------------
 
+    private int overlayWindowType() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            return WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+        }
+        return WindowManager.LayoutParams.TYPE_PHONE;
+    }
+
 
     public void addWindow(View view, boolean fullscreen) {
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(
@@ -446,7 +454,7 @@ public class MainNovaKeyService extends NovaKeyService {
                         WindowManager.LayoutParams.WRAP_CONTENT,
                 fullscreen ? WindowManager.LayoutParams.MATCH_PARENT :
                         WindowManager.LayoutParams.WRAP_CONTENT,
-                WindowManager.LayoutParams.TYPE_PHONE,
+                overlayWindowType(),
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
                 PixelFormat.TRANSLUCENT);
 
@@ -487,7 +495,7 @@ public class MainNovaKeyService extends NovaKeyService {
         final WindowManager.LayoutParams params = new WindowManager.LayoutParams(
                 WindowManager.LayoutParams.WRAP_CONTENT,
                 WindowManager.LayoutParams.WRAP_CONTENT,
-                WindowManager.LayoutParams.TYPE_PHONE,
+                overlayWindowType(),
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
                 PixelFormat.TRANSLUCENT);
         windowManager.addView(mController.getView(), params);
