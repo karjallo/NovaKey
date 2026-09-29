@@ -1,7 +1,6 @@
 # NovaKey
 
 > [!NOTE]
-
 > **Modernized Fork Notice:** I used this keyboard concept for many years, but it eventually became completely incompatible with modern Android versions. Since I don't have experience in mobile development and it wasn't a particular interest of mine, I vibe-coded an update to bring the code up to date so I could run it on my daily driver (Pixel 8a) and support current Android versions. Please note that for simplicity and to avoid extra maintenance work, the Wear OS wearable module has been disabled and is not functional at the moment.
 >
 > If you don't have enough developer experience to compile it yourself, you can download a pre-built APK from the [Releases page]({releases-link-apk}).
@@ -13,7 +12,7 @@
 
 
 
-> ## An alternative input method.
+## An alternative input method.
 
 The intent of NovaKey is to create an open platform for alternative input methods.
 You are free to (and encouraged!) to contribute to this project with new languages, layouts, themes or whatever!
